@@ -58,11 +58,11 @@
     <Compile Update="AnalogyColumnsMatcherUC.Designer.cs">
       <DependentUpon>AnalogyColumnsMatcherUC.cs</DependentUpon>
     </Compile>
-    <Compile Update="NLogSettings.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="NLogSettings.Designer.cs">
-      <DependentUpon>NLogSettings.cs</DependentUpon>
+      <DependentUpon>PlainTextUserSettingSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Update="PlainTextUserSettingSettings.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -76,7 +76,7 @@
       <DependentUpon>AnalogyColumnsMatcherUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Update="NLogSettings.resx">
-      <DependentUpon>NLogSettings.cs</DependentUpon>
+      <DependentUpon>PlainTextUserSettingSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
