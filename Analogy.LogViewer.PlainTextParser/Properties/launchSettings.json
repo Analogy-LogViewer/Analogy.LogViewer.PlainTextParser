@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "Analogy.LogViewer.NLogProvider": {
-      "commandName": "Project",
-      "workingDirectory": "E:\\files\\Programming\\Analogy.LogViewer\\Analogy\\bin\\Debug\\net472"
-    }
-  }
-}

@@ -6,8 +6,7 @@ using System.Windows.Forms;
 using Analogy.DataProviders.Extensions;
 using Analogy.Interfaces;
 using Analogy.Interfaces.Factories;
-using Analogy.LogViewer.NLogProvider;
-using Analogy.LogViewer.NLogProvider.Properties;
+using Analogy.LogViewer.PlainTextParser.Properties;
 
 namespace Analogy.LogViewer.PlainTextParser
 {
@@ -34,7 +33,7 @@ namespace Analogy.LogViewer.PlainTextParser
 
     public class AnalogyNLogDataProviderFactory : IAnalogyDataProvidersFactory
     {
-        public string Title { get; } = "Analogy NLogs Data Provider";
+        public string Title { get; } = "Analogy Plain Text Data Provider";
         public IEnumerable<IAnalogyDataProvider> Items { get; }
 
         public AnalogyNLogDataProviderFactory()
@@ -48,7 +47,7 @@ namespace Analogy.LogViewer.PlainTextParser
 
     public class AnalogyPlainTextCustomActionFactory : IAnalogyCustomActionsFactory
     {
-        public string Title { get; } = "Analogy NLog Built-In tools";
+        public string Title { get; } = "Analogy Plain Text tools";
         public IEnumerable<IAnalogyCustomAction> Items { get; }
 
         public AnalogyPlainTextCustomActionFactory()
@@ -64,8 +63,7 @@ namespace Analogy.LogViewer.PlainTextParser
         
         public string Title { get; } = "Plain Text Settings";
         public UserControl DataProviderSettings { get; } = new PlainTextUserControlSettings();
-        public Image Icon { get; } = Resources.nlog;
-
+        public Image Icon { get; } = Resources.file;
         public Task SaveSettingsAsync()
         {
             UserSettingsManager.UserSettings.Save();

@@ -15,16 +15,18 @@ namespace Analogy.LogViewer.PlainTextParser
         public Guid ID { get; } = new Guid("4C002803-607F-4325-9C19-242FF1F29877");
 
         public bool CanSaveToLogFile { get; } = false;
-        public string FileOpenDialogFilters { get; } = "log files|*.*;|Log file (*.*)";
+        public string FileOpenDialogFilters { get; } = "log files|*.*";
         public string FileSaveDialogFilters { get; } = string.Empty;
-        public IEnumerable<string> SupportFormats { get; } = new[] { "*.*"};
+        public IEnumerable<string> SupportFormats { get; } = new[] {"*.*"};
 
         public string InitialFolderFullPath => Directory.Exists(UserSettings?.Directory)
             ? UserSettings.Directory
             : Environment.CurrentDirectory;
+
         public PlainTextLogFileLoader PlainTextLogFileParser { get; set; }
 
         private ILogParserSettings UserSettings { get; set; }
+
         public PlainTextDataProvider(ILogParserSettings userSettings)
         {
             UserSettings = userSettings;
@@ -41,7 +43,9 @@ namespace Analogy.LogViewer.PlainTextParser
         {
             //nop
         }
-        public async Task<IEnumerable<AnalogyLogMessage>> Process(string fileName, CancellationToken token, ILogMessageCreatedHandler messagesHandler)
+
+        public async Task<IEnumerable<AnalogyLogMessage>> Process(string fileName, CancellationToken token,
+            ILogMessageCreatedHandler messagesHandler)
         {
             if (CanOpenFile(fileName))
                 return await PlainTextLogFileParser.Process(fileName, token, messagesHandler);
@@ -57,14 +61,16 @@ namespace Analogy.LogViewer.PlainTextParser
             throw new NotSupportedException("Saving is not supported for Plain Text");
         }
 
-        public bool CanOpenFile(string fileName) => UserSettingsManager.UserSettings.LogParserSettings.CanOpenFile(fileName);
+        public bool CanOpenFile(string fileName) =>
+            UserSettingsManager.UserSettings.LogParserSettings.CanOpenFile(fileName);
 
         public bool CanOpenAllFiles(IEnumerable<string> fileNames) => fileNames.All(CanOpenFile);
 
-        public static List<FileInfo> GetSupportedFilesInternal(DirectoryInfo dirInfo, bool recursive)
+        private List<FileInfo> GetSupportedFilesInternal(DirectoryInfo dirInfo, bool recursive)
         {
+
             List<FileInfo> files = dirInfo.GetFiles("*.*")
-                .ToList();
+                .Where(f => UserSettings.CanOpenFile(f.FullName)).ToList();
             if (!recursive)
                 return files;
             try

@@ -15,9 +15,9 @@ namespace Analogy.LogViewer.PlainTextParser
         public Guid ID { get; } = new Guid("6A338F45-8418-4F5D-A2DD-6C3D1A096B29");
 
         public bool CanSaveToLogFile { get; } = false;
-        public string FileOpenDialogFilters { get; } = "log files|*.*|Log file (*.*)";
+        public string FileOpenDialogFilters { get; } = "log files|*.*";
         public string FileSaveDialogFilters { get; } = string.Empty;
-        public IEnumerable<string> SupportFormats { get; } = new[] { "*.*", "*.*" };
+        public IEnumerable<string> SupportFormats { get; } = new[] { "*.*"};
 
         public string InitialFolderFullPath => Directory.Exists(UserSettings?.Directory)
             ? UserSettings.Directory
@@ -60,10 +60,11 @@ namespace Analogy.LogViewer.PlainTextParser
 
         public bool CanOpenAllFiles(IEnumerable<string> fileNames) => fileNames.All(CanOpenFile);
 
-        public static List<FileInfo> GetSupportedFilesInternal(DirectoryInfo dirInfo, bool recursive)
+        private List<FileInfo> GetSupportedFilesInternal(DirectoryInfo dirInfo, bool recursive)
         {
+
             List<FileInfo> files = dirInfo.GetFiles("*.*")
-                .ToList();
+                .Where(f=> UserSettings.CanOpenFile(f.FullName)).ToList();
             if (!recursive)
                 return files;
             try
