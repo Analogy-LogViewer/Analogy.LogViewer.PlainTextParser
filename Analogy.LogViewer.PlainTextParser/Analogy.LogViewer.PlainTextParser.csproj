@@ -19,7 +19,7 @@
     <DebugType>pdbonly</DebugType>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Analogy_logo1.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Analogy_logo1.ico</ApplicationIcon>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>1.0.4.1</Version>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -89,12 +89,16 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="icon.png">
+    <Content Include="Resources\Analogy_logo1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Resources\icon.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Analogy_logo1.ico" />
+    <None Include="Resources\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 </Project>

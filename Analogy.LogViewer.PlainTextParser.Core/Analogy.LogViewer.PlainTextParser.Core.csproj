@@ -28,14 +28,14 @@
 
   <ItemGroup>
     <None Remove="Analogy_logo1.ico" />
-    <None Include="icon.png">
+    <None Include="Resources\icon.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Analogy_logo1.ico" />
+    <Content Include="Resources\Analogy_logo1.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -82,6 +82,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
