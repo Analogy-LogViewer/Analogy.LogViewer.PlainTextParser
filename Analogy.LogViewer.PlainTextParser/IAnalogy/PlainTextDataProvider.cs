@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Analogy.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Analogy.Interfaces;
 
 namespace Analogy.LogViewer.PlainTextParser
 {
@@ -17,8 +17,8 @@ namespace Analogy.LogViewer.PlainTextParser
         public bool CanSaveToLogFile { get; } = false;
         public string FileOpenDialogFilters { get; } = "log files|*.*";
         public string FileSaveDialogFilters { get; } = string.Empty;
-        public IEnumerable<string> SupportFormats { get; } = new[] { "*.*"};
-
+        public IEnumerable<string> SupportFormats { get; } = new[] { "*.*" };
+        public bool DisableFilePoolingOption { get; } = false;
         public string InitialFolderFullPath => Directory.Exists(UserSettings?.Directory)
             ? UserSettings.Directory
             : Environment.CurrentDirectory;
@@ -60,11 +60,12 @@ namespace Analogy.LogViewer.PlainTextParser
 
         public bool CanOpenAllFiles(IEnumerable<string> fileNames) => fileNames.All(CanOpenFile);
 
+
         private List<FileInfo> GetSupportedFilesInternal(DirectoryInfo dirInfo, bool recursive)
         {
 
             List<FileInfo> files = dirInfo.GetFiles("*.*")
-                .Where(f=> UserSettings.CanOpenFile(f.FullName)).ToList();
+                .Where(f => UserSettings.CanOpenFile(f.FullName)).ToList();
             if (!recursive)
                 return files;
             try

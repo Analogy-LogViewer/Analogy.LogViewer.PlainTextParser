@@ -1,11 +1,10 @@
-﻿using System;
+﻿using Analogy.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Analogy.Interfaces;
-using Analogy.LogViewer.NLogProvider;
 
 namespace Analogy.LogViewer.PlainTextParser
 {
@@ -17,8 +16,8 @@ namespace Analogy.LogViewer.PlainTextParser
         public bool CanSaveToLogFile { get; } = false;
         public string FileOpenDialogFilters { get; } = "log files|*.*";
         public string FileSaveDialogFilters { get; } = string.Empty;
-        public IEnumerable<string> SupportFormats { get; } = new[] {"*.*"};
-
+        public IEnumerable<string> SupportFormats { get; } = new[] { "*.*" };
+        public bool DisableFilePoolingOption { get; } = false;
         public string InitialFolderFullPath => Directory.Exists(UserSettings?.Directory)
             ? UserSettings.Directory
             : Environment.CurrentDirectory;
