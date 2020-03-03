@@ -31,7 +31,7 @@
   <files>
     <file src="Analogy.LogViewer.PlainTextParser\bin\Release\net472\Analogy.LogViewer.PlainTextParser.dll" target="lib\net472\Analogy.LogViewer.PlainTextParser.dll" />
     <file src="Analogy.LogViewer.PlainTextParser.Core\bin\Release\netcoreapp3.0\Analogy.LogViewer.PlainTextParser.dll" target="lib\netcoreapp3.0\Analogy.LogViewer.PlainTextParser.dll" />
-    <file src="Analogy.LogViewer.PlainTextParser.Core\bin\Release\netcoreapp3.0\Analogy.LogViewer.NLogProvider.deps.json" target="lib\netcoreapp3.0\Analogy.LogViewer.PlainTextParser.deps.json" />
+    <file src="Analogy.LogViewer.PlainTextParser.Core\bin\Release\netcoreapp3.0\Analogy.LogViewer.PlainTextParser.deps.json" target="lib\netcoreapp3.0\Analogy.LogViewer.PlainTextParser.deps.json" />
     <file src="icon.png" target="" />
   </files>
 </package>
