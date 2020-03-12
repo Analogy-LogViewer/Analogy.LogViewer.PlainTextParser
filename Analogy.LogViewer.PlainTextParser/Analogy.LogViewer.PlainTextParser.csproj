@@ -11,19 +11,20 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <ApplicationIcon />
     <StartupObject />
-    <Version>1.0.5.1</Version>
+    <Version>1.0.5.2</Version>
     <AssemblyName>Analogy.LogViewer.PlainTextParser</AssemblyName>
     <RootNamespace>Analogy.LogViewer.PlainTextParser</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Copyright>Lior Banai © 2020</Copyright>
-    <AssemblyVersion>1.0.5.1</AssemblyVersion>
+    <AssemblyVersion>1.0.5.2</AssemblyVersion>
     <PackageProjectUrl>https://github.com/Analogy-LogViewer/Analogy.LogViewer.PlainTextParser</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Analogy-LogViewer/Analogy.LogViewer.PlainTextParser</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl />
-    <FileVersion>1.0.5.1</FileVersion>
+    <FileVersion>1.0.5.2</FileVersion>
+    <Authors>Lior Banai</Authors>
   </PropertyGroup>
 
   <ItemGroup>
