@@ -13,8 +13,8 @@ namespace Analogy.LogViewer.PlainTextParser
 
     public class PlainTextFactory : IAnalogyFactory
     {
-        public static Guid AnalogyNLogGuid { get; } = new Guid("65E6FD2B-1D9E-4DC2-883B-E82253E1FBD2");
-        public Guid FactoryID { get; } = AnalogyNLogGuid;
+        public static Guid AnalogyPlainTextGuid { get; } = new Guid("11CBFA00-DA2E-2F9F-B5A1-BE978FD09D57");
+        public Guid FactoryID { get; } = AnalogyPlainTextGuid;
         public string Title { get; } = "Analogy Plain Text Parser";
         public IAnalogyDataProvidersFactory DataProviders { get; }
         public IAnalogyCustomActionsFactory Actions { get; }
@@ -23,20 +23,20 @@ namespace Analogy.LogViewer.PlainTextParser
         public string About { get; } = "Analogy Plain Text Parser";
         public PlainTextFactory()
         {
-            DataProviders = new AnalogyNLogDataProviderFactory();
-            Actions = new AnalogyPlainTextCustomActionFactory();
+            DataProviders = new AnalogyPlainTextDataProviderFactory();
+            Actions = new AnalogyCustomActionFactory();
 
         }
 
 
     }
 
-    public class AnalogyNLogDataProviderFactory : IAnalogyDataProvidersFactory
+    public class AnalogyPlainTextDataProviderFactory : IAnalogyDataProvidersFactory
     {
-        public string Title { get; } = "Analogy Plain Text Data Provider";
+        public string Title { get; } = "Analogy Plain Text Provider";
         public IEnumerable<IAnalogyDataProvider> Items { get; }
 
-        public AnalogyNLogDataProviderFactory()
+        public AnalogyPlainTextDataProviderFactory()
         {
             var builtInItems = new List<IAnalogyDataProvider>();
             var adpnlog = new PlainTextDataProvider(UserSettingsManager.UserSettings.LogParserSettings);
@@ -45,25 +45,26 @@ namespace Analogy.LogViewer.PlainTextParser
         }
     }
 
-    public class AnalogyPlainTextCustomActionFactory : IAnalogyCustomActionsFactory
+    public class AnalogyCustomActionFactory : IAnalogyCustomActionsFactory
     {
         public string Title { get; } = "Analogy Plain Text tools";
         public IEnumerable<IAnalogyCustomAction> Items { get; }
 
-        public AnalogyPlainTextCustomActionFactory()
+        public AnalogyCustomActionFactory()
         {
             Items = new List<IAnalogyCustomAction>(0);
         }
     }
 
-    public class AnalogyPlainTextSettings : IAnalogyDataProviderSettings
+    public class AnalogyNLogSettings : IAnalogyDataProviderSettings
     {
        
-        public Guid ID { get; } = new Guid("AEE7B966-3A32-445B-8A4C-1BAD40624ABB");
+        public Guid ID { get; } = new Guid("1D14EC70-60C0-1823-BE9C-F1A59303FFB3");
         
         public string Title { get; } = "Plain Text Settings";
-        public UserControl DataProviderSettings { get; } = new PlainTextUserControlSettings();
-        public Image Icon { get; } = Resources.file;
+        public UserControl DataProviderSettings { get; } = new PlainTextUserSettingSettings();
+        public Image Icon { get; } = Resources.nlog;
+
         public Task SaveSettingsAsync()
         {
             UserSettingsManager.UserSettings.Save();

@@ -9,7 +9,8 @@ namespace Analogy.LogViewer.PlainTextParser
 {
     public class UserSettingsManager
     {
-    private static readonly Lazy<UserSettingsManager> _instance =
+
+        private static readonly Lazy<UserSettingsManager> _instance =
             new Lazy<UserSettingsManager>(() => new UserSettingsManager());
         public static UserSettingsManager UserSettings { get; set; } = _instance.Value;
         private string NLogFileSetting { get; } = "AnalogyPlainTextSettings.json";
@@ -27,7 +28,7 @@ namespace Analogy.LogViewer.PlainTextParser
                 }
                 catch (Exception ex)
                 {
-                    LogManager.Instance.LogException(ex,"Plain Text Provider","Error loading user setting file");
+                    LogManager.Instance.LogException(ex, "Plain Text Provider", "Error loading user setting file");
                     LogParserSettings = new LogParserSettings();
                     LogParserSettings.Splitter = "|";
                     LogParserSettings.SupportedFilesExtensions = new List<string> { "*.*" };
@@ -40,7 +41,7 @@ namespace Analogy.LogViewer.PlainTextParser
                 LogParserSettings.SupportedFilesExtensions = new List<string> { "*.*" };
 
             }
-          
+
         }
 
         public void Save()
@@ -53,7 +54,7 @@ namespace Analogy.LogViewer.PlainTextParser
             {
                 Console.WriteLine(e);
             }
-            
+
 
         }
     }

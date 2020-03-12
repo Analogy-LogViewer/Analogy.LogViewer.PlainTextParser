@@ -11,8 +11,7 @@ namespace Analogy.LogViewer.PlainTextParser
     public class PlainTextDataProvider : IAnalogyOfflineDataProvider
     {
         public string OptionalTitle { get; } = "Analogy Plain Text Parser";
-
-        public Guid ID { get; } = new Guid("6A338F45-8418-4F5D-A2DD-6C3D1A096B29");
+        public Guid ID { get; } = new Guid("4C002803-607F-4325-9C19-242FF1F29877");
 
         public bool CanSaveToLogFile { get; } = false;
         public string FileOpenDialogFilters { get; } = "log files|*.*";
@@ -22,17 +21,20 @@ namespace Analogy.LogViewer.PlainTextParser
         public string InitialFolderFullPath => Directory.Exists(UserSettings?.Directory)
             ? UserSettings.Directory
             : Environment.CurrentDirectory;
-        public PlainTextFileLoader PlainTextFileParser { get; set; }
+
+        public PlainTextLogFileLoader PlainTextLogFileParser { get; set; }
 
         private ILogParserSettings UserSettings { get; set; }
+
         public PlainTextDataProvider(ILogParserSettings userSettings)
         {
             UserSettings = userSettings;
         }
+
         public Task InitializeDataProviderAsync(IAnalogyLogger logger)
         {
             LogManager.Instance.SetLogger(logger);
-            PlainTextFileParser = new PlainTextFileLoader(UserSettingsManager.UserSettings.LogParserSettings);
+            PlainTextLogFileParser = new PlainTextLogFileLoader(UserSettingsManager.UserSettings.LogParserSettings);
             return Task.CompletedTask;
         }
 
@@ -40,10 +42,12 @@ namespace Analogy.LogViewer.PlainTextParser
         {
             //nop
         }
-        public async Task<IEnumerable<AnalogyLogMessage>> Process(string fileName, CancellationToken token, ILogMessageCreatedHandler messagesHandler)
+
+        public async Task<IEnumerable<AnalogyLogMessage>> Process(string fileName, CancellationToken token,
+            ILogMessageCreatedHandler messagesHandler)
         {
             if (CanOpenFile(fileName))
-                return await PlainTextFileParser.Process(fileName, token, messagesHandler);
+                return await PlainTextLogFileParser.Process(fileName, token, messagesHandler);
             return new List<AnalogyLogMessage>(0);
 
         }
@@ -56,10 +60,10 @@ namespace Analogy.LogViewer.PlainTextParser
             throw new NotSupportedException("Saving is not supported for Plain Text");
         }
 
-        public bool CanOpenFile(string fileName) => UserSettingsManager.UserSettings.LogParserSettings.CanOpenFile(fileName);
+        public bool CanOpenFile(string fileName) =>
+            UserSettingsManager.UserSettings.LogParserSettings.CanOpenFile(fileName);
 
         public bool CanOpenAllFiles(IEnumerable<string> fileNames) => fileNames.All(CanOpenFile);
-
 
         private List<FileInfo> GetSupportedFilesInternal(DirectoryInfo dirInfo, bool recursive)
         {

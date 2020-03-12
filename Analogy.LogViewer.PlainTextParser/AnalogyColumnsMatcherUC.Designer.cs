@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace Analogy.LogViewer.PlainTextParser
+namespace Analogy.LogViewer.NLogProvider
 {
     partial class AnalogyColumnsMatcherUC
     {
