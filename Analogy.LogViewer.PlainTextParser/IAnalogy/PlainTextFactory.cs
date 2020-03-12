@@ -56,14 +56,14 @@ namespace Analogy.LogViewer.PlainTextParser
         }
     }
 
-    public class AnalogyNLogSettings : IAnalogyDataProviderSettings
+    public class AnalogyPlainTextParserSettings : IAnalogyDataProviderSettings
     {
        
         public Guid ID { get; } = new Guid("1D14EC70-60C0-1823-BE9C-F1A59303FFB3");
         
         public string Title { get; } = "Plain Text Settings";
         public UserControl DataProviderSettings { get; } = new PlainTextUserSettingSettings();
-        public Image Icon { get; } = Resources.nlog;
+        public Image Icon { get; } = Resources.Analogy_small_16x16;
 
         public Task SaveSettingsAsync()
         {
