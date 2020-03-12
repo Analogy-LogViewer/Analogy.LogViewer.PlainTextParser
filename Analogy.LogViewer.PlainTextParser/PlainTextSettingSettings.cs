@@ -11,10 +11,10 @@ using Newtonsoft.Json;
 
 namespace Analogy.LogViewer.PlainTextParser
 {
-    public partial class PlainTextUserSettingSettings : UserControl
+    public partial class PlainTextSettingSettings : UserControl
     {
         private ILogParserSettings LogParsersSettings => UserSettingsManager.UserSettings.LogParserSettings;
-        public PlainTextUserSettingSettings()
+        public PlainTextSettingSettings()
         {
             InitializeComponent();
         }

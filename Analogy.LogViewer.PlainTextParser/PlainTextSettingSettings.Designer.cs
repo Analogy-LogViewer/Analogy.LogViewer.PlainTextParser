@@ -2,7 +2,7 @@
 
 namespace Analogy.LogViewer.PlainTextParser
 {
-    partial class PlainTextUserSettingSettings
+    partial class PlainTextSettingSettings
     {
         /// <summary>
         /// Required designer variable.

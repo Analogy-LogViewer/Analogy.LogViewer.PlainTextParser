@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFrameworks>netcoreapp3.1;net472</TargetFrameworks>
+    <TargetFrameworks>net472;netcoreapp3.1</TargetFrameworks>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
@@ -60,9 +60,9 @@
       <DependentUpon>AnalogyColumnsMatcherUC.cs</DependentUpon>
     </Compile>
     <Compile Update="NLogSettings.Designer.cs">
-      <DependentUpon>PlainTextUserSettingSettings.cs</DependentUpon>
+      <DependentUpon>PlainTextSettingSettings.cs</DependentUpon>
     </Compile>
-    <Compile Update="PlainTextUserSettingSettings.cs">
+    <Compile Update="PlainTextSettingSettings.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
@@ -77,7 +77,7 @@
       <DependentUpon>AnalogyColumnsMatcherUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Update="NLogSettings.resx">
-      <DependentUpon>PlainTextUserSettingSettings.cs</DependentUpon>
+      <DependentUpon>PlainTextSettingSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
