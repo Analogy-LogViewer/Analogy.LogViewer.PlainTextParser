@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Analogy.DataProviders.Extensions;
+using Analogy.Interfaces;
+using Analogy.Interfaces.Factories;
+using Analogy.LogViewer.PlainTextParser.Properties;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Analogy.DataProviders.Extensions;
-using Analogy.Interfaces;
-using Analogy.Interfaces.Factories;
-using Analogy.LogViewer.PlainTextParser.Properties;
 
 namespace Analogy.LogViewer.PlainTextParser
 {
@@ -58,12 +58,14 @@ namespace Analogy.LogViewer.PlainTextParser
 
     public class AnalogyPlainTextParserSettings : IAnalogyDataProviderSettings
     {
-       
+
         public Guid ID { get; } = new Guid("1D14EC70-60C0-1823-BE9C-F1A59303FFB3");
-        
+
         public string Title { get; } = "Plain Text Settings";
         public UserControl DataProviderSettings { get; } = new PlainTextSettingSettings();
-        public Image Icon { get; } = Resources.Analogy_small_16x16;
+        public Image SmallImage { get; } = Resources.Analogy_small_16x16;
+        public Image LargeImage { get; }
+        public Guid FactoryId { get; set; } = PlainTextFactory.AnalogyPlainTextGuid;
 
         public Task SaveSettingsAsync()
         {
