@@ -18,3 +18,7 @@ copy the relevant line, split it (load layout button) and arrange the type to th
 after saving you can open the log from the "plain text parser tab:
 ![loaded log](Assets/Usage/loadedLog.jpg)
 
+
+## How To Use
+1. Download the latest [Analogy Log Viewer](https://github.com/Analogy-LogViewer/Analogy.LogViewer) from the [release](https://github.com/Analogy-LogViewer/Analogy.LogViewer/releases) section (.net framework or .net Core version).
+2. Download (or Compile) this project and put the compiled DLL in the same folder as the Analogy Log Viewer.
