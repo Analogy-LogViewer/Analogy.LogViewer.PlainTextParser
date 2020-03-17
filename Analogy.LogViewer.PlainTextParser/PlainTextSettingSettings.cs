@@ -1,13 +1,11 @@
-﻿using System;
+﻿using Analogy.Interfaces;
+using Analogy.Interfaces.DataTypes;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using Analogy.DataProviders.Extensions;
-using Analogy.Interfaces;
-using Analogy.Interfaces.DataTypes;
-using Analogy.LogViewer.PlainTextParser;
-using Newtonsoft.Json;
 
 namespace Analogy.LogViewer.PlainTextParser
 {
@@ -33,7 +31,7 @@ namespace Analogy.LogViewer.PlainTextParser
         private void btnExportSettings_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Analogy NLog Settings (*.nlogsettings)|*.nlogsettings";
+            saveFileDialog.Filter = "Analogy Plain Text Settings (*.AnalogyPlainTextSettings)|*.AnalogyPlainTextSettings";
             saveFileDialog.Title = @"Export NLog settings";
 
             if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
@@ -80,8 +78,8 @@ namespace Analogy.LogViewer.PlainTextParser
         private void btnImport_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "Analogy NLog Settings (*.nlogsettings)|*.nlogsettings";
-            openFileDialog1.Title = @"Import NLog settings";
+            openFileDialog1.Filter = "Analogy plain Text Settings (*.AnalogyPlainTextSettings)|*.AnalogyPlainTextSettings";
+            openFileDialog1.Title = @"Import plain Text settings";
             openFileDialog1.Multiselect = true;
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
