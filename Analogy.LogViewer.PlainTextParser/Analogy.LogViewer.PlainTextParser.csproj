@@ -23,7 +23,7 @@
     <FileVersion>1.0.6.0</FileVersion>
     <Authors>Lior Banai</Authors>
     <Description>Plain text parser for Analogy Log Viewer</Description>
-    <PackageReleaseNotes>fix typos in ui controls</PackageReleaseNotes>
+    <PackageReleaseNotes>Align with changes in interface API</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
@@ -39,7 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Analogy.DataProviders.Extensions" Version="1.0.4.3" />
+    <PackageReference Include="Analogy.DataProviders.Extensions" Version="1.0.6" />
     <PackageReference Include="Analogy.LogViewer.Interfaces" Version="2.2.0" />
     <PackageReference Include="Microsoft.Build.Tasks.Git" Version="1.0.0">
       <PrivateAssets>all</PrivateAssets>
