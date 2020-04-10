@@ -50,6 +50,7 @@ namespace Analogy.LogViewer.PlainTextParser
     public class AnalogyPlainTextParserSettings : IAnalogyDataProviderSettings
     {
         public virtual Guid FactoryId { get; set; } = PlainTextFactory.AnalogyPlainTextGuid;
+        public Guid ID { get; set; } = new Guid("20DC5AD8-CDBF-47AD-8227-89451291A1E3");
 
         public string Title { get; } = "Plain Text Settings";
         public UserControl DataProviderSettings { get; } = new PlainTextSettingSettings();
