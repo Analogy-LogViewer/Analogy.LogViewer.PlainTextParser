@@ -1,4 +1,24 @@
-# Analogy Plain Text Parser   [![Gitter](https://badges.gitter.im/Analogy-LogViewer/community.svg)](https://gitter.im/Analogy-LogViewer/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) [![Nuget](https://img.shields.io/nuget/v/Analogy.LogViewer.PlainTextParser)](https://www.nuget.org/packages/Analogy.LogViewer.PlainTextParser/) [![Nuget](https://img.shields.io/nuget/dt/Analogy.LogViewer.PlainTextParser)](https://www.nuget.org/packages/Analogy.LogViewer.PlainTextParser/) [![Build Status](https://dev.azure.com/Analogy-LogViewer/Analogy%20Log%20Viewer/_apis/build/status/Analogy-LogViewer.Analogy.LogViewer.PlainTextParser?branchName=master)](https://dev.azure.com/Analogy-LogViewer/Analogy%20Log%20Viewer/_build/latest?definitionId=17&branchName=master)
+# Analogy Plain Text Parser
+
+
+[![Gitter](https://badges.gitter.im/Analogy-LogViewer/community.svg)](https://gitter.im/Analogy-LogViewer/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Nuget](https://img.shields.io/nuget/dt/Analogy.LogViewer.PlainTextParser)](https://www.nuget.org/packages/Analogy.LogViewer.PlainTextParser/) 
+[![Build Status](https://dev.azure.com/Analogy-LogViewer/Analogy%20Log%20Viewer/_apis/build/status/Analogy-LogViewer.Analogy.LogViewer.PlainTextParser?branchName=master)](https://dev.azure.com/Analogy-LogViewer/Analogy%20Log%20Viewer/_build/latest?definitionId=17&branchName=master)
+<a href="https://github.com/Analogy-LogViewer/Analogy.LogViewer.PlainTextParser/issues">
+    <img src="https://img.shields.io/github/issues/Analogy-LogViewer/Analogy.LogViewer.PlainTextParser" alt="Issues" />
+</a>
+<a href="https://github.com/Analogy-LogViewer/Analogy.LogViewer.PlainTextParser/blob/master/LICENSE.md">
+    <img src="https://img.shields.io/github/license/Analogy-LogViewer/Analogy.LogViewer.PlainTextParser" alt="License" />
+</a>
+
+[![Nuget](https://img.shields.io/nuget/v/Analogy.LogViewer.PlainTextParser)](https://www.nuget.org/packages/Analogy.LogViewer.PlainTextParser/) 
+<a href="https://github.com/Analogy-LogViewer/Analogy.LogViewer.PlainTextParser/releases">
+    <img src="https://img.shields.io/github/v/release/Analogy-LogViewer/Analogy.LogViewer.PlainTextParser" alt="Latest Release" />
+</a>
+<a href="https://github.com/Analogy-LogViewer/Analogy.Analogy.LogViewer.PlainTextParser/compare/V1.0.0...master"> 
+  <img src="https://img.shields.io/github/commits-since/Analogy-LogViewer/Analogy.Analogy.LogViewer.PlainTextParser/latest" alt="Commits Since Latest Release"  />
+</a>
+
 plain text parser (can be used to read most logs formats)
 
 for example, to parse simple Nlog files with the following line:
