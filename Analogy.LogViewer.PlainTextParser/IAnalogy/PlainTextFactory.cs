@@ -15,17 +15,17 @@ namespace Analogy.LogViewer.PlainTextParser
     {
         internal static Guid AnalogyPlainTextGuid { get; } = new Guid("11CBFA00-DA2E-2F9F-B5A1-BE978FD09D57");
         public Guid FactoryId { get; } = AnalogyPlainTextGuid;
-        public string Title { get; } = "Analogy Plain Text Parser";
+        public string Title { get; } = "Plain Text Parser";
         public IEnumerable<IAnalogyChangeLog> ChangeLog => PlainTextParser.ChangeLog.GetChangeLog();
         public IEnumerable<string> Contributors { get; } = new List<string> { "Lior Banai" };
-        public string About { get; } = "Analogy Plain Text Parser";
+        public string About { get; } = "Plain Text Parser";
 
     }
 
     public class AnalogyPlainTextDataProviderFactory : IAnalogyDataProvidersFactory
     {
         public virtual Guid FactoryId { get; } = PlainTextFactory.AnalogyPlainTextGuid;
-        public virtual string Title { get; } = "Analogy Plain Text Provider";
+        public virtual string Title { get; } = "Plain Text Provider";
         public IEnumerable<IAnalogyDataProvider> DataProviders { get; }
 
         public AnalogyPlainTextDataProviderFactory()
@@ -38,7 +38,7 @@ namespace Analogy.LogViewer.PlainTextParser
     {
         public Guid FactoryId { get; set; } = PlainTextFactory.AnalogyPlainTextGuid;
 
-        public string Title { get; } = "Analogy Plain Text tools";
+        public string Title { get; } = "Plain Text tools";
         public IEnumerable<IAnalogyCustomAction> Actions { get; }
 
         public AnalogyCustomActionFactory()

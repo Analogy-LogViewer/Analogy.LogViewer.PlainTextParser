@@ -11,13 +11,13 @@ namespace Analogy.LogViewer.PlainTextParser
 {
     public class PlainTextDataProvider : IAnalogyOfflineDataProvider
     {
-        public string OptionalTitle { get; } = "Analogy Plain Text Parser";
+        public string OptionalTitle { get; } = "Plain Text Parser";
         public Guid ID { get; } = new Guid("4C002803-607F-4325-9C19-242FF1F29877");
 
         public bool CanSaveToLogFile { get; } = false;
-        public string FileOpenDialogFilters { get; } = "log files|*.*";
+        public string FileOpenDialogFilters { get; } = "log files|*.txt";
         public string FileSaveDialogFilters { get; } = string.Empty;
-        public IEnumerable<string> SupportFormats { get; } = new[] { "*.*" };
+        public IEnumerable<string> SupportFormats { get; } = new[] { "*.txt" };
         public bool DisableFilePoolingOption { get; } = false;
         public string InitialFolderFullPath => Directory.Exists(UserSettings?.Directory)
             ? UserSettings.Directory
@@ -74,7 +74,7 @@ namespace Analogy.LogViewer.PlainTextParser
         private List<FileInfo> GetSupportedFilesInternal(DirectoryInfo dirInfo, bool recursive)
         {
 
-            List<FileInfo> files = dirInfo.GetFiles("*.*")
+            List<FileInfo> files = dirInfo.GetFiles("*.txt")
                 .Where(f => UserSettings.CanOpenFile(f.FullName)).ToList();
             if (!recursive)
                 return files;
