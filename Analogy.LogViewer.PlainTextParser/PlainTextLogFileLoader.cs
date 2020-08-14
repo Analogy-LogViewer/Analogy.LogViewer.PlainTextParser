@@ -5,17 +5,18 @@ using System.Threading;
 using System.Threading.Tasks;
 using Analogy.DataProviders.Extensions;
 using Analogy.Interfaces;
+using Analogy.Interfaces.DataTypes;
 
 namespace Analogy.LogViewer.PlainTextParser
 {
     public class PlainTextLogFileLoader
     {
-        private ILogParserSettings _logFileSettings;
-        private GeneralFileParser _parser;
-        public PlainTextLogFileLoader(ILogParserSettings logFileSettings)
+        private ISplitterLogParserSettings _logFileSettings;
+        private PlainLogFileParser _parser;
+        public PlainTextLogFileLoader(ISplitterLogParserSettings logFileSettings)
         {
             _logFileSettings = logFileSettings;
-            _parser = new GeneralFileParser(_logFileSettings);
+            _parser = new PlainLogFileParser(_logFileSettings);
         }
         public async Task<IEnumerable<AnalogyLogMessage>> Process(string fileName, CancellationToken token, ILogMessageCreatedHandler messagesHandler)
         {

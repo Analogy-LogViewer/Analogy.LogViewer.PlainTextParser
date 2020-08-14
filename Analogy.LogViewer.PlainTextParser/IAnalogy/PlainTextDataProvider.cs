@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Analogy.Interfaces.DataTypes;
 
 namespace Analogy.LogViewer.PlainTextParser
 {
@@ -25,14 +26,14 @@ namespace Analogy.LogViewer.PlainTextParser
 
         public PlainTextLogFileLoader PlainTextLogFileParser { get; set; }
 
-        private ILogParserSettings UserSettings { get; set; }
+        private ISplitterLogParserSettings UserSettings { get; set; }
         public bool UseCustomColors { get; set; } = false;
         public IEnumerable<(string originalHeader, string replacementHeader)> GetReplacementHeaders()
             => Array.Empty<(string, string)>();
 
         public (Color backgroundColor, Color foregroundColor) GetColorForMessage(IAnalogyLogMessage logMessage)
             => (Color.Empty, Color.Empty);
-        public PlainTextDataProvider(ILogParserSettings userSettings)
+        public PlainTextDataProvider(ISplitterLogParserSettings userSettings)
         {
             UserSettings = userSettings;
         }

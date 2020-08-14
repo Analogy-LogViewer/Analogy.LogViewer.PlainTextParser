@@ -14,7 +14,7 @@ namespace Analogy.LogViewer.PlainTextParser
             new Lazy<UserSettingsManager>(() => new UserSettingsManager());
         public static UserSettingsManager UserSettings { get; set; } = _instance.Value;
         private string NLogFileSetting { get; } = "AnalogyPlainTextSettings.json";
-        public ILogParserSettings LogParserSettings { get; set; }
+        public ISplitterLogParserSettings LogParserSettings { get; set; }
 
 
         public UserSettingsManager()
@@ -24,19 +24,19 @@ namespace Analogy.LogViewer.PlainTextParser
                 try
                 {
                     string data = File.ReadAllText(NLogFileSetting);
-                    LogParserSettings = JsonConvert.DeserializeObject<LogParserSettings>(data);
+                    LogParserSettings = JsonConvert.DeserializeObject<SplitterLogParserSettings>(data);
                 }
                 catch (Exception ex)
                 {
                     LogManager.Instance.LogException(ex, "Plain Text Provider", "Error loading user setting file");
-                    LogParserSettings = new LogParserSettings();
+                    LogParserSettings = new SplitterLogParserSettings();
                     LogParserSettings.Splitter = "|";
                     LogParserSettings.SupportedFilesExtensions = new List<string> { "*.*" };
                 }
             }
             else
             {
-                LogParserSettings = new LogParserSettings();
+                LogParserSettings = new SplitterLogParserSettings();
                 LogParserSettings.Splitter = "|";
                 LogParserSettings.SupportedFilesExtensions = new List<string> { "*.*" };
 
