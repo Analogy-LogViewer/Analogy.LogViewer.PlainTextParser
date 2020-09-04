@@ -12,8 +12,8 @@ namespace Analogy.LogViewer.PlainTextParser
 {
     public class PlainTextDataProvider : IAnalogyOfflineDataProvider
     {
-        public string OptionalTitle { get; } = "Plain Text Parser";
-        public Guid Id { get; } = new Guid("4C002803-607F-4325-9C19-242FF1F29877");
+        public string OptionalTitle { get; set; } = "Plain Text Parser";
+        public Guid Id { get; set; } = new Guid("4C002803-607F-4325-9C19-242FF1F29877");
 
         public bool CanSaveToLogFile { get; } = false;
         public string FileOpenDialogFilters { get; } = "log files|*.txt";

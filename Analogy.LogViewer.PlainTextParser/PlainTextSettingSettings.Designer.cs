@@ -1,5 +1,4 @@
-﻿using Analogy.DataProviders.Extensions;
-
+﻿
 namespace Analogy.LogViewer.PlainTextParser
 {
     partial class PlainTextSettingSettings
@@ -90,7 +89,7 @@ namespace Analogy.LogViewer.PlainTextParser
             // 
             // txtNLogLayout
             // 
-            this.txtNLogLayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtNLogLayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNLogLayout.Location = new System.Drawing.Point(216, 10);
             this.txtNLogLayout.Name = "txtNLogLayout";
@@ -99,7 +98,7 @@ namespace Analogy.LogViewer.PlainTextParser
             // 
             // txtNLogSeperator
             // 
-            this.txtNLogSeperator.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtNLogSeperator.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNLogSeperator.Location = new System.Drawing.Point(216, 38);
             this.txtNLogSeperator.Name = "txtNLogSeperator";
@@ -118,7 +117,7 @@ namespace Analogy.LogViewer.PlainTextParser
             // 
             // txtNLogExtension
             // 
-            this.txtNLogExtension.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtNLogExtension.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNLogExtension.Location = new System.Drawing.Point(216, 90);
             this.txtNLogExtension.Name = "txtNLogExtension";
@@ -148,8 +147,8 @@ namespace Analogy.LogViewer.PlainTextParser
             // 
             // analogyColumnsMatcherUC1
             // 
-            this.analogyColumnsMatcherUC1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.analogyColumnsMatcherUC1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.analogyColumnsMatcherUC1.Font = new System.Drawing.Font("Tahoma", 7.8F);
             this.analogyColumnsMatcherUC1.Location = new System.Drawing.Point(0, 120);
@@ -159,7 +158,7 @@ namespace Analogy.LogViewer.PlainTextParser
             // 
             // txtbNLogDirectory
             // 
-            this.txtbNLogDirectory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtbNLogDirectory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtbNLogDirectory.Location = new System.Drawing.Point(216, 63);
             this.txtbNLogDirectory.Name = "txtbNLogDirectory";
