@@ -29,8 +29,8 @@ namespace Analogy.LogViewer.PlainTextParser
         private ISplitterLogParserSettings UserSettings { get; set; }
         public bool UseCustomColors { get; set; } = false;
 
-        public Image LargeImage => null;
-        public Image SmallImage => null;
+        public Image LargeImage { get; set; } = null;
+        public Image SmallImage { get; set; } = null;
 
         public IEnumerable<(string originalHeader, string replacementHeader)> GetReplacementHeaders()
             => Array.Empty<(string, string)>();

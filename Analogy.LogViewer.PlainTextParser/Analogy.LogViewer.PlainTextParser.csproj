@@ -8,19 +8,19 @@
 		<UseWindowsForms>true</UseWindowsForms>
 		<ApplicationIcon />
 		<StartupObject />
-		<Version>1.1.4</Version>
+		<Version>1.1.5</Version>
 		<AssemblyName>Analogy.LogViewer.PlainTextParser</AssemblyName>
 		<RootNamespace>Analogy.LogViewer.PlainTextParser</RootNamespace>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<Copyright>Lior Banai © 2020</Copyright>
-		<AssemblyVersion>1.1.4.0</AssemblyVersion>
+		<AssemblyVersion>1.1.5.0</AssemblyVersion>
 		<PackageProjectUrl>https://github.com/Analogy-LogViewer/Analogy.LogViewer.PlainTextParser</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/Analogy-LogViewer/Analogy.LogViewer.PlainTextParser</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageIcon>icon.png</PackageIcon>
 		<PackageIconUrl />
-		<FileVersion>1.1.4.0</FileVersion>
+		<FileVersion>1.1.5.0</FileVersion>
 		<Authors>Lior Banai</Authors>
 		<Description>Plain text parser for Analogy Log Viewer</Description>
 		<PackageReleaseNotes>Align with changes in interface API</PackageReleaseNotes>
@@ -41,8 +41,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Analogy.CommonUtilities" Version="1.0.2" />
-		<PackageReference Include="Analogy.LogViewer.Interfaces" Version="2.4.6" />
+		<PackageReference Include="Analogy.CommonUtilities" Version="1.0.3" />
+		<PackageReference Include="Analogy.LogViewer.Interfaces" Version="2.4.7" />
 		<PackageReference Include="Microsoft.Build.Tasks.Git" Version="1.0.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
