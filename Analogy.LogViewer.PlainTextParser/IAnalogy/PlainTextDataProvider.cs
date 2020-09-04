@@ -13,7 +13,7 @@ namespace Analogy.LogViewer.PlainTextParser
     public class PlainTextDataProvider : IAnalogyOfflineDataProvider
     {
         public string OptionalTitle { get; } = "Plain Text Parser";
-        public Guid ID { get; } = new Guid("4C002803-607F-4325-9C19-242FF1F29877");
+        public Guid Id { get; } = new Guid("4C002803-607F-4325-9C19-242FF1F29877");
 
         public bool CanSaveToLogFile { get; } = false;
         public string FileOpenDialogFilters { get; } = "log files|*.txt";
@@ -28,6 +28,10 @@ namespace Analogy.LogViewer.PlainTextParser
 
         private ISplitterLogParserSettings UserSettings { get; set; }
         public bool UseCustomColors { get; set; } = false;
+
+        public Image LargeImage => null;
+        public Image SmallImage => null;
+
         public IEnumerable<(string originalHeader, string replacementHeader)> GetReplacementHeaders()
             => Array.Empty<(string, string)>();
 
