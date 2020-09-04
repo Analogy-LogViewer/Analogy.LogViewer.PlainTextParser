@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Analogy.Interfaces;
 using Analogy.Interfaces.DataTypes;
+using Analogy.CommonUtilities.ExtensionMethods;
 
 namespace Analogy.LogViewer.NLogProvider
 {
