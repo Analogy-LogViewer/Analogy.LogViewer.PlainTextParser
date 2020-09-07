@@ -12,6 +12,8 @@ namespace Analogy.LogViewer.PlainTextParser
 {
     public class PlainTextDataProvider : IAnalogyOfflineDataProvider
     {
+        private Image _largeImage = null;
+        private Image _smallImage = null;
         public string OptionalTitle { get; set; } = "Plain Text Parser";
         public Guid Id { get; set; } = new Guid("4C002803-607F-4325-9C19-242FF1F29877");
 
@@ -29,8 +31,17 @@ namespace Analogy.LogViewer.PlainTextParser
         private ISplitterLogParserSettings UserSettings { get; set; }
         public bool UseCustomColors { get; set; } = false;
 
-        public Image LargeImage { get; set; } = null;
-        public Image SmallImage { get; set; } = null;
+        public Image LargeImage
+        {
+            get => _largeImage;
+            set => _largeImage = value;
+        }
+
+        public Image SmallImage
+        {
+            get => _smallImage;
+            set => _smallImage = value;
+        }
 
         public IEnumerable<(string originalHeader, string replacementHeader)> GetReplacementHeaders()
             => Array.Empty<(string, string)>();
