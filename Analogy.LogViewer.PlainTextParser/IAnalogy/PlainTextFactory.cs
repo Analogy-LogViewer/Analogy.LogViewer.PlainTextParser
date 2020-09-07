@@ -48,13 +48,19 @@ namespace Analogy.LogViewer.PlainTextParser
 
     public class AnalogyPlainTextParserSettings : IAnalogyDataProviderSettings
     {
+        private Image _largeImage = null;
         public virtual Guid FactoryId { get; set; } = PlainTextFactory.AnalogyPlainTextGuid;
         public Guid Id { get; set; } = new Guid("20DC5AD8-CDBF-47AD-8227-89451291A1E3");
 
         public string Title { get; set; } = "Plain Text Settings";
         public UserControl DataProviderSettings { get; } = new PlainTextSettingSettings();
         public Image SmallImage { get; set; } = Resources.Analogy_small_16x16;
-        public Image LargeImage { get; set; } = null;
+
+        public Image LargeImage
+        {
+            get => _largeImage;
+            set => _largeImage = value;
+        }
 
         public Task SaveSettingsAsync()
         {
