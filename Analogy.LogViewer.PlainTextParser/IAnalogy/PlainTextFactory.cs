@@ -12,10 +12,15 @@ namespace Analogy.LogViewer.PlainTextParser
 
     public class PlainTextFactory : IAnalogyFactory
     {
+
         internal static Guid AnalogyPlainTextGuid { get; } = new Guid("11CBFA00-DA2E-2F9F-B5A1-BE978FD09D57");
         public Guid FactoryId { get; set; } = AnalogyPlainTextGuid;
         public string Title { get; set; } = "Plain Text Parser";
         public IEnumerable<IAnalogyChangeLog> ChangeLog { get; set; } = PlainTextParser.ChangeLog.GetChangeLog();
+
+        public Image LargeImage { get; set; } = null;
+        public Image SmallImage { get; set; } = null;
+
         public IEnumerable<string> Contributors { get; set; } = new List<string> { "Lior Banai" };
         public string About { get; set; } = "Plain Text Parser";
 
