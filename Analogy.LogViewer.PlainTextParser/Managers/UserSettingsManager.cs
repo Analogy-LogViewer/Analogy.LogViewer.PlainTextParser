@@ -28,7 +28,7 @@ namespace Analogy.LogViewer.PlainTextParser
                 }
                 catch (Exception ex)
                 {
-                    LogManager.Instance.LogException(ex, "Plain Text Provider", "Error loading user setting file");
+                    LogManager.Instance.LogException("Error loading user setting file",ex, "Plain Text Provider");
                     LogParserSettings = new SplitterLogParserSettings();
                     LogParserSettings.Splitter = "|";
                     LogParserSettings.SupportedFilesExtensions = new List<string> { "*.*" };
