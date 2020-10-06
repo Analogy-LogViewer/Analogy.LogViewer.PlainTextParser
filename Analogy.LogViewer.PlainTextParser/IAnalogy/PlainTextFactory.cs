@@ -10,19 +10,19 @@ using System.Windows.Forms;
 namespace Analogy.LogViewer.PlainTextParser
 {
 
-    public class PlainTextFactory : IAnalogyFactory
+    public class PlainTextFactory : Analogy.LogViewer.Template.PrimaryFactory
     {
 
         internal static Guid AnalogyPlainTextGuid { get; } = new Guid("11CBFA00-DA2E-2F9F-B5A1-BE978FD09D57");
-        public Guid FactoryId { get; set; } = AnalogyPlainTextGuid;
-        public string Title { get; set; } = "Plain Text Parser";
-        public IEnumerable<IAnalogyChangeLog> ChangeLog { get; set; } = PlainTextParser.ChangeLog.GetChangeLog();
+        public override Guid FactoryId { get; set; } = AnalogyPlainTextGuid;
+        public override string Title { get; set; } = "Plain Text Parser";
+        public override IEnumerable<IAnalogyChangeLog> ChangeLog { get; set; } = PlainTextParser.ChangeLog.GetChangeLog();
 
-        public Image LargeImage { get; set; } = null;
-        public Image SmallImage { get; set; } = null;
+        public override Image LargeImage { get; set; } = null;
+        public override Image SmallImage { get; set; } = null;
 
-        public IEnumerable<string> Contributors { get; set; } = new List<string> { "Lior Banai" };
-        public string About { get; set; } = "Plain Text Parser";
+        public override IEnumerable<string> Contributors { get; set; } = new List<string> { "Lior Banai" };
+        public override string About { get; set; } = "Plain Text Parser";
 
     }
 
@@ -51,23 +51,15 @@ namespace Analogy.LogViewer.PlainTextParser
         }
     }
 
-    public class AnalogyPlainTextParserSettings : IAnalogyDataProviderSettings
+    public class AnalogyPlainTextParserSettings : Analogy.LogViewer.Template.UserSettingsFactory
     {
-        private Image _largeImage = null;
-        public virtual Guid FactoryId { get; set; } = PlainTextFactory.AnalogyPlainTextGuid;
-        public Guid Id { get; set; } = new Guid("20DC5AD8-CDBF-47AD-8227-89451291A1E3");
+        public override Guid FactoryId { get; set; } = PlainTextFactory.AnalogyPlainTextGuid;
+        public override Guid Id { get; set; } = new Guid("20DC5AD8-CDBF-47AD-8227-89451291A1E3");
 
-        public string Title { get; set; } = "Plain Text Settings";
-        public UserControl DataProviderSettings { get; } = new PlainTextSettingSettings();
-        public Image SmallImage { get; set; } = Resources.Analogy_small_16x16;
+        public override string Title { get; set; } = "Plain Text Settings";
+        public override UserControl DataProviderSettings { get; set; } = new PlainTextSettingSettings();
 
-        public Image LargeImage
-        {
-            get => _largeImage;
-            set => _largeImage = value;
-        }
-
-        public Task SaveSettingsAsync()
+        public override Task SaveSettingsAsync()
         {
             UserSettingsManager.UserSettings.Save();
             return Task.CompletedTask;
