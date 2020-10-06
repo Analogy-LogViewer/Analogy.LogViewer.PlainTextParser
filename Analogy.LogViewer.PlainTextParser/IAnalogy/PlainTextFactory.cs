@@ -26,11 +26,11 @@ namespace Analogy.LogViewer.PlainTextParser
 
     }
 
-    public class AnalogyPlainTextDataProviderFactory : IAnalogyDataProvidersFactory
+    public class AnalogyPlainTextDataProviderFactory : Analogy.LogViewer.Template.DataProvidersFactory
     {
-        public virtual Guid FactoryId { get; set; } = PlainTextFactory.AnalogyPlainTextGuid;
-        public virtual string Title { get; set; } = "Plain Text Provider";
-        public IEnumerable<IAnalogyDataProvider> DataProviders { get; }
+        public override Guid FactoryId { get; set; } = PlainTextFactory.AnalogyPlainTextGuid;
+        public override string Title { get; set; } = "Plain Text Provider";
+        public override  IEnumerable<IAnalogyDataProvider> DataProviders { get; set; }
 
         public AnalogyPlainTextDataProviderFactory()
         {
@@ -38,12 +38,12 @@ namespace Analogy.LogViewer.PlainTextParser
         }
     }
 
-    public class AnalogyCustomActionFactory : IAnalogyCustomActionsFactory
+    public class AnalogyCustomActionFactory : Analogy.LogViewer.Template.CustomActionsFactory
     {
-        public Guid FactoryId { get; set; } = PlainTextFactory.AnalogyPlainTextGuid;
+        public override Guid FactoryId { get; set; } = PlainTextFactory.AnalogyPlainTextGuid;
 
-        public string Title { get; set; } = "Plain Text tools";
-        public IEnumerable<IAnalogyCustomAction> Actions { get; }
+        public override string Title { get; set; } = "Plain Text tools";
+        public override IEnumerable<IAnalogyCustomAction> Actions { get; }
 
         public AnalogyCustomActionFactory()
         {
