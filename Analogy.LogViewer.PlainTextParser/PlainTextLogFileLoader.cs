@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Analogy.Interfaces;
+using Analogy.Interfaces.DataTypes;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using Analogy.Interfaces;
-using Analogy.Interfaces.DataTypes;
 
 namespace Analogy.LogViewer.PlainTextParser
 {
@@ -61,7 +61,7 @@ namespace Analogy.LogViewer.PlainTextParser
                     {
                         while (!reader.EndOfStream)
                         {
-                            var line = await reader.ReadLineAsync();
+                            var line = await reader.ReadLineAsync() ?? "";
                             var items = line.Split(_parser.splitters, StringSplitOptions.RemoveEmptyEntries);
                             while (items.Length < _logFileSettings.ValidItemsCount)
                             {

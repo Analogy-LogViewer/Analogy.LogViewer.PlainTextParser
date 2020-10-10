@@ -83,7 +83,7 @@ namespace Analogy.LogViewer.NLogProvider
                 new Dictionary<int, AnalogyLogMessagePropertyName>(lstBAnalogyColumns.Items.Count);
             for (int i = 0; i < lstBAnalogyColumns.Items.Count; i++)
             {
-                if (lstBAnalogyColumns.Items[i].ToString()
+                if ((lstBAnalogyColumns.Items[i]?.ToString() ?? "")
                     .Contains("ignore", StringComparison.InvariantCultureIgnoreCase)) continue;
                 {
                     maps.Add(i, (AnalogyLogMessagePropertyName)Enum.Parse(typeof(AnalogyLogMessagePropertyName),

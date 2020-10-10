@@ -16,9 +16,6 @@ namespace Analogy.LogViewer.PlainTextParser
         public override string Title { get; set; } = "Plain Text Parser";
         public override IEnumerable<IAnalogyChangeLog> ChangeLog { get; set; } = PlainTextParser.ChangeLog.GetChangeLog();
 
-        public override Image LargeImage { get; set; } = null;
-        public override Image SmallImage { get; set; } = null;
-
         public override IEnumerable<string> Contributors { get; set; } = new List<string> { "Lior Banai" };
         public override string About { get; set; } = "Plain Text Parser";
 
