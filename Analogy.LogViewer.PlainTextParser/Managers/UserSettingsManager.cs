@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using Analogy.Interfaces;
 using Analogy.Interfaces.DataTypes;
+using Analogy.LogViewer.Template.Managers;
 using Newtonsoft.Json;
 
 namespace Analogy.LogViewer.PlainTextParser

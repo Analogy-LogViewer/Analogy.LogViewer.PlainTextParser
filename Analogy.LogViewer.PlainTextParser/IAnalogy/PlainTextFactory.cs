@@ -1,6 +1,4 @@
 ﻿using Analogy.Interfaces;
-using Analogy.Interfaces.Factories;
-using Analogy.LogViewer.PlainTextParser.Properties;
 using System;
 using System.Collections.Generic;
 using System.Drawing;

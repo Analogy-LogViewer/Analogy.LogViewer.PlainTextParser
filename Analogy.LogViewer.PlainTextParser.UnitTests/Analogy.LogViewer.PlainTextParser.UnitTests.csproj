@@ -46,12 +46,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Analogy.LogViewer.NLogProvider\Analogy.LogViewer.PlainTextParser.csproj">
-      <Project>{62285313-621e-4b80-84f0-cfee0b257d7a}</Project>
-      <Name>Analogy.LogViewer.PlainTextParser</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Analogy.LogViewer.Interfaces">
       <Version>2.7.3</Version>
     </PackageReference>

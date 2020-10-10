@@ -1,5 +1,4 @@
-﻿using Analogy.Interfaces;
-using Analogy.Interfaces.DataTypes;
+﻿using Analogy.Interfaces.DataTypes;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

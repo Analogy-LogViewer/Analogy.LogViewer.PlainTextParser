@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Analogy.Interfaces.DataTypes;
+using Analogy.LogViewer.Template.Managers;
 
 namespace Analogy.LogViewer.PlainTextParser
 {
@@ -32,12 +32,12 @@ namespace Analogy.LogViewer.PlainTextParser
         public PlainTextDataProvider(ISplitterLogParserSettings userSettings)
         {
             UserSettings = userSettings;
+            PlainTextLogFileParser = new PlainTextLogFileLoader(UserSettingsManager.UserSettings.LogParserSettings);
         }
 
         public override Task InitializeDataProviderAsync(IAnalogyLogger logger)
         {
             LogManager.Instance.SetLogger(logger);
-            PlainTextLogFileParser = new PlainTextLogFileLoader(UserSettingsManager.UserSettings.LogParserSettings);
             return Task.CompletedTask;
         }
 
@@ -45,7 +45,9 @@ namespace Analogy.LogViewer.PlainTextParser
             ILogMessageCreatedHandler messagesHandler)
         {
             if (CanOpenFile(fileName))
+            {
                 return await PlainTextLogFileParser.Process(fileName, token, messagesHandler);
+            }
             return new List<AnalogyLogMessage>(0);
 
         }
