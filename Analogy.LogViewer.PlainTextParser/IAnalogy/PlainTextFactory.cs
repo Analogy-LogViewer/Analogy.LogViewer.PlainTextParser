@@ -11,8 +11,8 @@ namespace Analogy.LogViewer.PlainTextParser
     public class PlainTextFactory : Analogy.LogViewer.Template.PrimaryFactory
     {
 
-        internal static Guid AnalogyPlainTextGuid { get; } = new Guid("11CBFA00-DA2E-2F9F-B5A1-BE978FD09D57");
-        public override Guid FactoryId { get; set; } = AnalogyPlainTextGuid;
+        internal static Guid Id { get; } = new Guid("11CBFA00-DA2E-2F9F-B5A1-BE978FD09D57");
+        public override Guid FactoryId { get; set; } = Id;
         public override string Title { get; set; } = "Plain Text Parser";
         public override IEnumerable<IAnalogyChangeLog> ChangeLog { get; set; } = PlainTextParser.ChangeLog.GetChangeLog();
 
@@ -23,7 +23,7 @@ namespace Analogy.LogViewer.PlainTextParser
 
     public class AnalogyPlainTextDataProviderFactory : Analogy.LogViewer.Template.DataProvidersFactory
     {
-        public override Guid FactoryId { get; set; } = PlainTextFactory.AnalogyPlainTextGuid;
+        public override Guid FactoryId { get; set; } = PlainTextFactory.Id;
         public override string Title { get; set; } = "Plain Text Provider";
         public override  IEnumerable<IAnalogyDataProvider> DataProviders { get; set; }
 
@@ -35,7 +35,7 @@ namespace Analogy.LogViewer.PlainTextParser
 
     public class AnalogyCustomActionFactory : Analogy.LogViewer.Template.CustomActionsFactory
     {
-        public override Guid FactoryId { get; set; } = PlainTextFactory.AnalogyPlainTextGuid;
+        public override Guid FactoryId { get; set; } = PlainTextFactory.Id;
 
         public override string Title { get; set; } = "Plain Text tools";
         public override IEnumerable<IAnalogyCustomAction> Actions { get; }
@@ -48,7 +48,7 @@ namespace Analogy.LogViewer.PlainTextParser
 
     public class AnalogyPlainTextParserSettings : Analogy.LogViewer.Template.UserSettingsFactory
     {
-        public override Guid FactoryId { get; set; } = PlainTextFactory.AnalogyPlainTextGuid;
+        public override Guid FactoryId { get; set; } = PlainTextFactory.Id;
         public override Guid Id { get; set; } = new Guid("20DC5AD8-CDBF-47AD-8227-89451291A1E3");
 
         public override string Title { get; set; } = "Plain Text Settings";
