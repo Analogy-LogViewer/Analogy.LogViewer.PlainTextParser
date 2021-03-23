@@ -84,10 +84,13 @@ namespace Analogy.LogViewer.NLogProvider
             for (int i = 0; i < lstBAnalogyColumns.Items.Count; i++)
             {
                 if ((lstBAnalogyColumns.Items[i]?.ToString() ?? "")
-                    .Contains("ignore", StringComparison.InvariantCultureIgnoreCase)) continue;
+                    .Contains("ignore", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    maps.Add(i, (AnalogyLogMessagePropertyName)Enum.Parse(typeof(AnalogyLogMessagePropertyName),
-                    lstBAnalogyColumns.Items[i].ToString()));}
+                    continue;
+                }
+
+                maps.Add(i, (AnalogyLogMessagePropertyName)Enum.Parse(typeof(AnalogyLogMessagePropertyName),
+                lstBAnalogyColumns.Items[i].ToString()));
             }
 
             return maps;

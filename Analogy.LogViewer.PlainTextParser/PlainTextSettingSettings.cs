@@ -61,7 +61,11 @@ namespace Analogy.LogViewer.PlainTextParser
         {
             try
             {
-                if (string.IsNullOrEmpty(txtNLogSeperator.Text)) return;
+                if (string.IsNullOrEmpty(txtNLogSeperator.Text))
+                {
+                    return;
+                }
+
                 var items = txtNLogLayout.Text
                     .Split(txtNLogSeperator.Text.ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
                     .ToArray();
