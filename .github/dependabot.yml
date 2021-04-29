@@ -1,0 +1,30 @@
+version: 2
+updates:
+- package-ecosystem: nuget
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: System.Resources.Extensions
+    versions:
+    - ">= 4.7.a, < 4.8"
+  - dependency-name: Analogy.CommonUtilities
+    versions:
+    - 1.4.5.1
+    - 1.4.5.4
+  - dependency-name: Analogy.LogViewer.Interfaces
+    versions:
+    - 2.10.0
+    - 2.11.0
+  - dependency-name: MSTest.TestFramework
+    versions:
+    - 2.2.2
+    - 2.2.3
+  - dependency-name: MSTest.TestAdapter
+    versions:
+    - 2.2.2
+    - 2.2.3
+  - dependency-name: Analogy.LogViewer.Template
+    versions:
+    - 1.8.1.1
