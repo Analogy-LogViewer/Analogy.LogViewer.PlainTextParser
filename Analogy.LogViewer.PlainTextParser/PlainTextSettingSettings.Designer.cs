@@ -39,7 +39,7 @@ namespace Analogy.LogViewer.PlainTextParser
             this.txtNLogExtension = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnImport = new System.Windows.Forms.Button();
-            this.analogyColumnsMatcherUC1 = new Analogy.LogViewer.NLogProvider.AnalogyColumnsMatcherUC();
+            this.analogyColumnsMatcherUC1 = new AnalogyColumnsMatcherUC();
             this.txtbNLogDirectory = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnOpenFolder = new System.Windows.Forms.Button();
@@ -214,7 +214,7 @@ namespace Analogy.LogViewer.PlainTextParser
 
         #endregion
 
-        private Analogy.LogViewer.NLogProvider.AnalogyColumnsMatcherUC analogyColumnsMatcherUC1;
+        private AnalogyColumnsMatcherUC analogyColumnsMatcherUC1;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnExportSettings;
         private System.Windows.Forms.Label lblLayout;

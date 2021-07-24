@@ -1,11 +1,10 @@
-﻿using Analogy.CommonUtilities.ExtensionMethods;
-using Analogy.Interfaces;
-using Analogy.Interfaces.DataTypes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using Analogy.Interfaces;
+using Analogy.Interfaces.DataTypes;
 
-namespace Analogy.LogViewer.NLogProvider
+namespace Analogy.LogViewer.PlainTextParser
 {
     public partial class AnalogyColumnsMatcherUC : UserControl
     {
