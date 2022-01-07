@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 	<PropertyGroup>
 		<OutputType>Library</OutputType>
-		<TargetFrameworks>net6.0-windows;net5.0-windows;net48;net471;net472;netcoreapp3.1</TargetFrameworks>
+		<TargetFrameworks>net6.0-windows;net5.0-windows;netcoreapp3.1;net48;net472;net471</TargetFrameworks>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
@@ -10,12 +10,12 @@
 		<UseWindowsForms>true</UseWindowsForms>
 		<ApplicationIcon />
 		<StartupObject />
-		<Version>1.6.0</Version>
+		<Version>1.6.1</Version>
 		<AssemblyName>Analogy.LogViewer.PlainTextParser</AssemblyName>
 		<RootNamespace>Analogy.LogViewer.PlainTextParser</RootNamespace>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<Copyright>Lior Banai © 2020-2021</Copyright>
+		<Copyright>Lior Banai © 2020-2022</Copyright>
 		<PackageProjectUrl>https://github.com/Analogy-LogViewer/Analogy.LogViewer.PlainTextParser</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/Analogy-LogViewer/Analogy.LogViewer.PlainTextParser</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
@@ -43,14 +43,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Analogy.CommonUtilities" Version="1.6.1" />
-		<PackageReference Include="Analogy.LogViewer.Interfaces" Version="2.15.1" />
-		<PackageReference Include="Analogy.LogViewer.Template" Version="2.0.0" />
-		<PackageReference Include="Microsoft.Build.Tasks.Git" Version="1.1.0">
+		<PackageReference Include="Analogy.CommonUtilities" Version="1.6.3" />
+		<PackageReference Include="Analogy.LogViewer.Interfaces" Version="2.15.2" />
+		<PackageReference Include="Analogy.LogViewer.Template" Version="2.1.0" />
+		<PackageReference Include="Microsoft.Build.Tasks.Git" Version="1.1.1">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.0">
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
