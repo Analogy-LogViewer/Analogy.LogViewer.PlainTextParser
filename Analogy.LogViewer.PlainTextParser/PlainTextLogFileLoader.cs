@@ -71,6 +71,7 @@ namespace Analogy.LogViewer.PlainTextParser
                             }
                             var entry = _parser.Parse(line);
                             messages.Add(entry);
+                            count++;
                             messagesHandler.ReportFileReadProgress(new AnalogyFileReadProgress(AnalogyFileReadProgressType.Incremental, 1, count, count));
                         }
                     }

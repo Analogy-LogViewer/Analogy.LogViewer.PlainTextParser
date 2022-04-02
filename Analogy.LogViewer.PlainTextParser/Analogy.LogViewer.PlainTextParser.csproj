@@ -10,7 +10,7 @@
 		<UseWindowsForms>true</UseWindowsForms>
 		<ApplicationIcon />
 		<StartupObject />
-		<Version>2.0.0</Version>
+		<Version>2.0.1</Version>
 		<AssemblyName>Analogy.LogViewer.PlainTextParser</AssemblyName>
 		<RootNamespace>Analogy.LogViewer.PlainTextParser</RootNamespace>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
