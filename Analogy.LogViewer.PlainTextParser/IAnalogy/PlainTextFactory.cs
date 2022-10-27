@@ -25,7 +25,7 @@ namespace Analogy.LogViewer.PlainTextParser
     {
         public override Guid FactoryId { get; set; } = PlainTextFactory.Id;
         public override string Title { get; set; } = "Plain Text Provider";
-        public override  IEnumerable<IAnalogyDataProvider> DataProviders { get; set; }
+        public override IEnumerable<IAnalogyDataProvider> DataProviders { get; set; }
 
         public AnalogyPlainTextDataProviderFactory()
         {
@@ -46,13 +46,18 @@ namespace Analogy.LogViewer.PlainTextParser
         }
     }
 
-    public class AnalogyPlainTextParserSettings : Analogy.LogViewer.Template.UserSettingsFactory
+    public class AnalogyPlainTextParserSettings : Analogy.LogViewer.Template.TemplateUserSettingsFactory
     {
         public override Guid FactoryId { get; set; } = PlainTextFactory.Id;
         public override Guid Id { get; set; } = new Guid("20DC5AD8-CDBF-47AD-8227-89451291A1E3");
 
         public override string Title { get; set; } = "Plain Text Settings";
-        public override UserControl DataProviderSettings { get; set; } = new PlainTextSettingSettings();
+        public override UserControl DataProviderSettings { get; set; }
+
+        public override void CreateUserControl(IAnalogyLogger logger)
+        {
+            DataProviderSettings = new PlainTextSettingSettings();
+        }
 
         public override Task SaveSettingsAsync()
         {
