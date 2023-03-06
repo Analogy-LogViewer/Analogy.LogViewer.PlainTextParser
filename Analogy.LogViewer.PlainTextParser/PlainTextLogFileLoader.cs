@@ -17,7 +17,7 @@ namespace Analogy.LogViewer.PlainTextParser
             _logFileSettings = logFileSettings;
             _parser = new PlainLogFileParser(_logFileSettings);
         }
-        public async Task<IEnumerable<AnalogyLogMessage>> Process(string fileName, CancellationToken token, ILogMessageCreatedHandler messagesHandler)
+        public async Task<IEnumerable<IAnalogyLogMessage>> Process(string fileName, CancellationToken token, ILogMessageCreatedHandler messagesHandler)
         {
             if (string.IsNullOrEmpty(fileName))
             {
@@ -52,7 +52,7 @@ namespace Analogy.LogViewer.PlainTextParser
                 messagesHandler.AppendMessage(empty, Utils.GetFileNameAsDataSource(fileName));
                 return new List<AnalogyLogMessage> { empty };
             }
-            List<AnalogyLogMessage> messages = new List<AnalogyLogMessage>();
+            List<IAnalogyLogMessage> messages = new List<IAnalogyLogMessage>();
             try
             {
                 long count = 0;
