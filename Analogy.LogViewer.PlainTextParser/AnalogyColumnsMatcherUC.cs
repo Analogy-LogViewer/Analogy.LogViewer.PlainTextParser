@@ -35,9 +35,8 @@ namespace Analogy.LogViewer.PlainTextParser
                 return;
             }
             var selectedIndex = lstBAnalogyColumns.SelectedIndex;
-            var currentValue = lstBAnalogyColumns.Items[selectedIndex + 1];
-            lstBAnalogyColumns.Items[selectedIndex + 1] = lstBAnalogyColumns.Items[selectedIndex];
-            lstBAnalogyColumns.Items[selectedIndex] = currentValue;
+            (lstBAnalogyColumns.Items[selectedIndex + 1], lstBAnalogyColumns.Items[selectedIndex]) =
+                (lstBAnalogyColumns.Items[selectedIndex], lstBAnalogyColumns.Items[selectedIndex + 1]);
             lstBAnalogyColumns.SelectedIndex = lstBAnalogyColumns.SelectedIndex + 1;
         }
 
@@ -64,9 +63,9 @@ namespace Analogy.LogViewer.PlainTextParser
             lstBAnalogyColumns.Items.Clear();
             for (int i = 0; i < 21; i++)
             {
-                if (parser.Maps.ContainsKey(i))
+                if (parser.Maps.TryGetValue(i, out var map))
                 {
-                    lstBAnalogyColumns.Items.Add(parser.Maps[i]);
+                    lstBAnalogyColumns.Items.Add(map);
                 }
                 else
                 {
