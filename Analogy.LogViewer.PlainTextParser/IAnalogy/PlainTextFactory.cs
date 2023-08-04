@@ -1,4 +1,5 @@
 ﻿using Analogy.Interfaces;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -54,7 +55,7 @@ namespace Analogy.LogViewer.PlainTextParser
         public override string Title { get; set; } = "Plain Text Settings";
         public override UserControl DataProviderSettings { get; set; }
 
-        public override void CreateUserControl(IAnalogyLogger logger)
+        public override void CreateUserControl(ILogger logger)
         {
             DataProviderSettings = new PlainTextSettingSettings();
         }

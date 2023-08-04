@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using Analogy.Interfaces.DataTypes;
 using Analogy.LogViewer.Template.Managers;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
 namespace Analogy.LogViewer.PlainTextParser
@@ -28,7 +29,7 @@ namespace Analogy.LogViewer.PlainTextParser
                 }
                 catch (Exception ex)
                 {
-                    LogManager.Instance.LogException("Error loading user setting file",ex, "Plain Text Provider");
+                    LogManager.Instance.LogError(ex, "Error loading user setting file",ex, "Plain Text Provider");
                     LogParserSettings = new SplitterLogParserSettings();
                     LogParserSettings.Splitter = "|";
                     LogParserSettings.SupportedFilesExtensions = new List<string> { "*.*" };

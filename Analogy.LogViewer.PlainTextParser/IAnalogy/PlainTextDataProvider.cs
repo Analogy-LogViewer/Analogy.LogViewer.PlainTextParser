@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Analogy.Interfaces.DataTypes;
 using Analogy.LogViewer.Template.Managers;
+using Microsoft.Extensions.Logging;
 
 namespace Analogy.LogViewer.PlainTextParser
 {
@@ -31,7 +32,7 @@ namespace Analogy.LogViewer.PlainTextParser
             PlainTextLogFileParser = new PlainTextLogFileLoader(UserSettingsManager.UserSettings.LogParserSettings);
         }
 
-        public override Task InitializeDataProvider(IAnalogyLogger logger)
+        public override Task InitializeDataProvider(ILogger logger)
         {
             LogManager.Instance.SetLogger(logger);
             return base.InitializeDataProvider(logger);

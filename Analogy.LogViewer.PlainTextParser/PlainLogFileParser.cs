@@ -25,9 +25,9 @@ namespace Analogy.LogViewer.PlainTextParser
             for (int i = 0; i < items.Count; i++)
             {
                 var item = items[i];
-                if (_logFileSettings.Maps.ContainsKey(i))
+                if (_logFileSettings.Maps.TryGetValue(i, out AnalogyLogMessagePropertyName value))
                 {
-                    map.Add((_logFileSettings.Maps[i], items[i]));
+                    map.Add((value, items[i]));
                 }
             }
             return AnalogyLogMessage.Parse(map);
