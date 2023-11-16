@@ -11,7 +11,6 @@ namespace Analogy.LogViewer.PlainTextParser
         {
             string file = Path.GetFileName(fileName);
             return fileName.Equals(file) ? fileName : $"{file} ({fileName})";
-
         }
     }
     public static class GeneralExtensionMethods

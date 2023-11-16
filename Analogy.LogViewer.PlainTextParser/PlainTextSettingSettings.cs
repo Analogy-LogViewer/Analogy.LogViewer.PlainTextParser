@@ -41,14 +41,12 @@ namespace Analogy.LogViewer.PlainTextParser
                     File.WriteAllText(saveFileDialog.FileName, JsonConvert.SerializeObject(LogParsersSettings));
                     MessageBox.Show("File Saved", @"Export settings", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
-
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error Export: " + ex.Message, @"Error Saving file", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
-
             }
         }
 
@@ -93,7 +91,6 @@ namespace Analogy.LogViewer.PlainTextParser
                     LoadNLogSettings(nlog);
                     MessageBox.Show("File Imported. Save settings if desired", @"Import settings", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
-
                 }
                 catch (Exception ex)
                 {
@@ -124,7 +121,6 @@ namespace Analogy.LogViewer.PlainTextParser
                 if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
                 {
                     txtbNLogDirectory.Text = fbd.SelectedPath;
-
                 }
             }
         }

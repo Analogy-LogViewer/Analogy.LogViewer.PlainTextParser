@@ -1,11 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29503.13
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analogy.LogViewer.PlainTextParser.UnitTests", "Analogy.LogViewer.PlainTextParser.UnitTests\Analogy.LogViewer.PlainTextParser.UnitTests.csproj", "{6C2D5075-51BD-4CA1-8D0D-9F1AF7B2CBFA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Analogy.LogViewer.PlainTextParser", "Analogy.LogViewer.PlainTextParser\Analogy.LogViewer.PlainTextParser.csproj", "{169959BB-BEC0-4196-8A64-040E9FB4491B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{244504AB-EF64-47EA-915D-0F5B8D1A9708}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		Directory.Build.props = Directory.Build.props
+		.github\workflows\dotnet-core-desktop.yml = .github\workflows\dotnet-core-desktop.yml
+		nuget.config = nuget.config
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

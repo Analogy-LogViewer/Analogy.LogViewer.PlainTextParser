@@ -8,10 +8,8 @@ using System.Windows.Forms;
 
 namespace Analogy.LogViewer.PlainTextParser
 {
-
     public class PlainTextFactory : Analogy.LogViewer.Template.PrimaryFactory
     {
-
         internal static Guid Id { get; } = new Guid("11CBFA00-DA2E-2F9F-B5A1-BE978FD09D57");
         public override Guid FactoryId { get; set; } = Id;
         public override string Title { get; set; } = "Plain Text Parser";
@@ -19,7 +17,6 @@ namespace Analogy.LogViewer.PlainTextParser
 
         public override IEnumerable<string> Contributors { get; set; } = new List<string> { "Lior Banai" };
         public override string About { get; set; } = "Plain Text Parser";
-
     }
 
     public class AnalogyPlainTextDataProviderFactory : Analogy.LogViewer.Template.DataProvidersFactory
@@ -65,6 +62,5 @@ namespace Analogy.LogViewer.PlainTextParser
             UserSettingsManager.UserSettings.Save();
             return Task.CompletedTask;
         }
-
     }
 }

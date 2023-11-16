@@ -1,13 +1,13 @@
 ﻿using Analogy.Interfaces;
+using Analogy.Interfaces.DataTypes;
+using Analogy.LogViewer.Template.Managers;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using Analogy.Interfaces.DataTypes;
-using Analogy.LogViewer.Template.Managers;
-using Microsoft.Extensions.Logging;
 
 namespace Analogy.LogViewer.PlainTextParser
 {
@@ -46,7 +46,6 @@ namespace Analogy.LogViewer.PlainTextParser
                 return await PlainTextLogFileParser.Process(fileName, token, messagesHandler);
             }
             return new List<AnalogyLogMessage>(0);
-
         }
 
         public override bool CanOpenFile(string fileName) => UserSettingsManager.UserSettings.LogParserSettings.CanOpenFile(fileName);

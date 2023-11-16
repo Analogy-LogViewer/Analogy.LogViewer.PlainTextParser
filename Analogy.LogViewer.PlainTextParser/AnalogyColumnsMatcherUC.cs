@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Analogy.Interfaces;
+using Analogy.Interfaces.DataTypes;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using Analogy.Interfaces;
-using Analogy.Interfaces.DataTypes;
 
 namespace Analogy.LogViewer.PlainTextParser
 {
@@ -13,7 +13,6 @@ namespace Analogy.LogViewer.PlainTextParser
         {
             InitializeComponent();
         }
-
 
         private void BtnMoveUp_Click(object sender, EventArgs e)
         {
@@ -42,14 +41,11 @@ namespace Analogy.LogViewer.PlainTextParser
 
         private void lstBAnalogyColumns_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             if (lstBAnalogyColumns.SelectedIndex > lstBoxItems.Items.Count - 1)
             {
                 return;
             }
             lstBoxItems.SelectedIndex = lstBAnalogyColumns.SelectedIndex;
-
-
         }
 
         public void SetColumns(string[] columns)
@@ -71,9 +67,7 @@ namespace Analogy.LogViewer.PlainTextParser
                 {
                     lstBAnalogyColumns.Items.Add("__ignore__");
                 }
-
             }
-
         }
         private Dictionary<int, AnalogyLogMessagePropertyName> GetMapping()
         {

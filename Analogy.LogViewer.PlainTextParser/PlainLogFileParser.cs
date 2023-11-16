@@ -1,13 +1,13 @@
-﻿using System;
+﻿using Analogy.Interfaces;
+using Analogy.Interfaces.DataTypes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using Analogy.Interfaces;
-using Analogy.Interfaces.DataTypes;
 
 namespace Analogy.LogViewer.PlainTextParser
 {
-    class PlainLogFileParser
+    public class PlainLogFileParser
     {
         private readonly ISplitterLogParserSettings _logFileSettings;
         public readonly string[] splitters;
