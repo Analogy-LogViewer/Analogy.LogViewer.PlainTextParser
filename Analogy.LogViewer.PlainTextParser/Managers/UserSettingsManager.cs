@@ -1,7 +1,6 @@
 ﻿using Analogy.Interfaces.DataTypes;
 using Analogy.LogViewer.Template.Managers;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -23,7 +22,7 @@ namespace Analogy.LogViewer.PlainTextParser
                 try
                 {
                     string data = File.ReadAllText(FileSetting);
-                    LogParserSettings = JsonConvert.DeserializeObject<SplitterLogParserSettings>(data);
+                    LogParserSettings = System.Text.Json.JsonSerializer.Deserialize<SplitterLogParserSettings>(data);
                 }
                 catch (Exception ex)
                 {
@@ -45,7 +44,7 @@ namespace Analogy.LogViewer.PlainTextParser
         {
             try
             {
-                File.WriteAllText(FileSetting, JsonConvert.SerializeObject(LogParserSettings));
+                File.WriteAllText(FileSetting, System.Text.Json.JsonSerializer.Serialize(LogParserSettings));
             }
             catch (Exception e)
             {

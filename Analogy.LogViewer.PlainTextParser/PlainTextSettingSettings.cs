@@ -1,5 +1,4 @@
 ﻿using Analogy.Interfaces.DataTypes;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -38,7 +37,7 @@ namespace Analogy.LogViewer.PlainTextParser
                 SaveMapping();
                 try
                 {
-                    File.WriteAllText(saveFileDialog.FileName, JsonConvert.SerializeObject(LogParsersSettings));
+                    File.WriteAllText(saveFileDialog.FileName, System.Text.Json.JsonSerializer.Serialize(LogParsersSettings));
                     MessageBox.Show("File Saved", @"Export settings", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                 }
@@ -87,7 +86,7 @@ namespace Analogy.LogViewer.PlainTextParser
                 try
                 {
                     var json = File.ReadAllText(openFileDialog1.FileName);
-                    SplitterLogParserSettings nlog = JsonConvert.DeserializeObject<SplitterLogParserSettings>(json);
+                    SplitterLogParserSettings nlog = System.Text.Json.JsonSerializer.Deserialize<SplitterLogParserSettings>(json);
                     LoadNLogSettings(nlog);
                     MessageBox.Show("File Imported. Save settings if desired", @"Import settings", MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
