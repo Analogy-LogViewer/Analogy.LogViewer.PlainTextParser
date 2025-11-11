@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Analogy.LogViewer.PlainTextParser
 {
-    public class PlainTextFactory : Analogy.LogViewer.Template.PrimaryFactory
+    public class PlainTextFactory : Analogy.LogViewer.Template.PrimaryFactoryWinForms
     {
         internal static Guid Id { get; } = new Guid("11CBFA00-DA2E-2F9F-B5A1-BE978FD09D57");
         public override Guid FactoryId { get; set; } = Id;
