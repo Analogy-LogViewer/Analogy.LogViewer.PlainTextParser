@@ -1,6 +1,7 @@
 ﻿using Analogy.Interfaces;
 using Analogy.Interfaces.DataTypes;
 using Analogy.LogViewer.Template.Managers;
+using Analogy.LogViewer.Template.WinForms;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Analogy.LogViewer.PlainTextParser
 {
-    public class PlainTextDataProvider : Analogy.LogViewer.Template.OfflineDataProviderWinForms
+    public class PlainTextDataProvider : OfflineDataProviderWinForms
     {
         public override string? OptionalTitle { get; set; } = "Plain Text Parser";
         public override Guid Id { get; set; } = new Guid("4C002803-607F-4325-9C19-242FF1F29877");

@@ -1,4 +1,5 @@
 ﻿using Analogy.Interfaces;
+using Analogy.LogViewer.Template.WinForms;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Analogy.LogViewer.PlainTextParser
 {
-    public class PlainTextFactory : Analogy.LogViewer.Template.PrimaryFactoryWinForms
+    public class PlainTextFactory : PrimaryFactoryWinForms
     {
         internal static Guid Id { get; } = new Guid("11CBFA00-DA2E-2F9F-B5A1-BE978FD09D57");
         public override Guid FactoryId { get; set; } = Id;
@@ -44,7 +45,7 @@ namespace Analogy.LogViewer.PlainTextParser
         }
     }
 
-    public class AnalogyPlainTextParserSettings : Analogy.LogViewer.Template.TemplateUserSettingsFactory
+    public class AnalogyPlainTextParserSettings : TemplateUserSettingsFactoryWinForms
     {
         public override Guid FactoryId { get; set; } = PlainTextFactory.Id;
         public override Guid Id { get; set; } = new Guid("20DC5AD8-CDBF-47AD-8227-89451291A1E3");
