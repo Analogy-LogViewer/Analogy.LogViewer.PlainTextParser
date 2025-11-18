@@ -20,7 +20,7 @@ namespace Analogy.LogViewer.PlainTextParser
         public override string About { get; set; } = "Plain Text Parser";
     }
 
-    public class AnalogyPlainTextDataProviderFactory : Analogy.LogViewer.Template.DataProvidersFactory
+    public sealed class AnalogyPlainTextDataProviderFactory : DataProvidersFactoryWinForms
     {
         public override Guid FactoryId { get; set; } = PlainTextFactory.Id;
         public override string Title { get; set; } = "Plain Text Provider";
