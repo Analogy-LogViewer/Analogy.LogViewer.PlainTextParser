@@ -2,7 +2,7 @@
 	<PropertyGroup>
 		<OutputType>Library</OutputType>
 		<TargetFrameworks>net10.0-windows;net9.0-windows;net8.0-windows;net48</TargetFrameworks>
-		<VersionPrefix>9.0.6</VersionPrefix>
+		<VersionPrefix>9.0.7</VersionPrefix>
 		<VersionSuffix></VersionSuffix>
 		<AssemblyName>Analogy.LogViewer.PlainTextParser</AssemblyName>
 		<RootNamespace>Analogy.LogViewer.PlainTextParser</RootNamespace>
@@ -32,8 +32,8 @@
 		<PackageReference Include="Analogy.CommonUtilities" Version="9.0.6" />
 		<PackageReference Include="Analogy.LogViewer.Template" Version="9.0.6" />
 		<PackageReference Include="Analogy.LogViewer.Template.WinForms" Version="9.0.6" />
-		<PackageReference Include="System.Resources.Extensions" Version="10.0.9" />
-		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.300" PrivateAssets="All" />
+		<PackageReference Include="System.Resources.Extensions" Version="10.0.10" />
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.301" PrivateAssets="All" />
 
 		
 	</ItemGroup>
@@ -75,6 +75,10 @@
 			<Pack>True</Pack>
 			<PackagePath></PackagePath>
 		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Update="Microsoft.CodeAnalysis.CSharp.CodeStyle" Version="5.6.0" />
 	</ItemGroup>
 
 </Project>
