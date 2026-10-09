@@ -1,0 +1,18 @@
+<Project>
+	<PropertyGroup>
+		<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+		<CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageVersion Include="Analogy.CommonUtilities" Version="9.0.6" />
+		<PackageVersion Include="Analogy.LogViewer.Interfaces" Version="9.0.6" />
+		<PackageVersion Include="Analogy.LogViewer.Template" Version="9.0.6" />
+		<PackageVersion Include="Analogy.LogViewer.Template.WinForms" Version="9.0.6" />
+		<PackageVersion Include="Meziantou.Analyzer" Version="3.0.140" />
+		<PackageVersion Include="Microsoft.CodeAnalysis.CSharp.CodeStyle" Version="5.3.0" />
+		<PackageVersion Include="Microsoft.SourceLink.GitHub" Version="10.0.301" />
+		<PackageVersion Include="Roslynator.Analyzers" Version="4.15.0" />
+		<PackageVersion Include="StyleCop.Analyzers" Version="1.2.0-beta.556" />
+		<PackageVersion Include="System.Resources.Extensions" Version="10.0.10" />
+	</ItemGroup>
+</Project>
