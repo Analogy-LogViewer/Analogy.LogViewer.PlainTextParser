@@ -8,7 +8,7 @@
 		<PackageVersion Include="Analogy.LogViewer.Interfaces" Version="9.0.6" />
 		<PackageVersion Include="Analogy.LogViewer.Template" Version="9.0.6" />
 		<PackageVersion Include="Analogy.LogViewer.Template.WinForms" Version="9.0.6" />
-		<PackageVersion Include="Meziantou.Analyzer" Version="3.0.296" />
+		<PackageVersion Include="Meziantou.Analyzer" Version="3.0.299" />
 		<PackageVersion Include="Microsoft.CodeAnalysis.CSharp.CodeStyle" Version="5.9.0" />
 		<PackageVersion Include="Microsoft.SourceLink.GitHub" Version="10.0.401" />
 		<PackageVersion Include="Roslynator.Analyzers" Version="5.0.1" />
